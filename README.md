@@ -30,7 +30,9 @@ To run CT problems, first download the datasets from
 
 ## Low Dose CT Problems
 
+To train the ellipse CT problem run trainEllipseCT.py
 
+To train the lodopab CT problem run trainLodopabCT.py
 
 
 ## Acknowledgements
