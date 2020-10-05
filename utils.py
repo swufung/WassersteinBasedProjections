@@ -183,13 +183,6 @@ def plot_and_save_images(u_true_train, u_gen0_train, u_gen_train, u_true_val, u_
 
 def plot_and_save_histories(his_wass, his_ssim, his_psnr, his_MSE_val, his_eta, gen_iter,save_path):
 
-    # print("gen_iter = ", gen_iter)
-    # print("his_wass[0] = ", his_wass[0])
-    # print("his_wass[0:1] = ", his_wass[0:1])
-    # print("his_wass[0:1][0] = ", his_wass[0:1][0])
-    # print("np.linspace(1, gen_iter, gen_iter) = ", np.linspace(1, gen_iter, gen_iter))
-    # print("his_wass[0:gen_iter] = ", his_wass[0:gen_iter])
-
     # plot Wasserstein history
     plt.figure(figsize=(10, 10))
     title_str = 'wass_distance ' + str(gen_iter)
