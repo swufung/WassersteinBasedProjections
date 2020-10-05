@@ -69,6 +69,7 @@ print(device)
 # ------------------------------------------------------------------------------------------------------------------
 # Lodopab
 data_path = './CTLodopab/experimentsLodopab/lodopab___train_size-20000___tv_lam-0.0005__july-25-2020.pkl'
+os.makedirs(data_path,  exist_ok=True)
 
 with open(data_path, 'rb') as f:
     data_state = pickle.load(f)
@@ -77,6 +78,7 @@ with open(data_path, 'rb') as f:
     u_gen_full_train = data_state[gen0_type]
 
 val_data_path = './CTLodopab/experimentsLodopab/lodopab___validation_size-2000___tv_lam-0.0005__july-25-2020.pkl'
+os.makedirs(val_data_path,  exist_ok=True)
 
 with open(val_data_path, 'rb') as f:
     data_state = pickle.load(f)
@@ -193,6 +195,7 @@ save_path = './CTLodopab/experimentsLodopab/' + 'lodopabCT_CNN_' + utils.get_tim
             '_distMan_lam{:.0e}'.format(dist_man_lam) + '_lr_decay_iter{:d}'.format(lr_decay_iter) + \
             'doAugment{:d}'.format(do_augment) + '_architecture' + architecture +\
             '_stepType' + step_type + '_tvlam001/'
+os.makedirs(save_path,  exist_ok=True)
 
 # max and min values for plotting
 vmin = min(u0_gen_full_train[0, :].view(-1))
