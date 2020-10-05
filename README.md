@@ -40,8 +40,9 @@ To train the lodopab CT problem run trainLodopabCT.py
 
 ## Acknowledgements
 
-This material is partially funded by AFOSR MURI FA9550-18-1-0502, AFOSR Grant No. FA9550-18-1-0167, and ONR Grants N00014-18-1-2527 snf N00014-17-1-21. 
-NSF Grant No. DGE-1650604. Any opinion, findings, and conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the NSF.
+This material is partially funded by AFOSR MURI FA9550-18-1-0502, AFOSR Grant No. FA9550-18-1-0167, ONR Grants N00014-18-1-2527 snf N00014-17-1-21, and
+NSF Grant No. DGE-1650604. 
+Any opinion, findings, and conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the NSF.
 
 
 
