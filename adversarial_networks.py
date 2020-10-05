@@ -1,10 +1,7 @@
 class discriminator_net_Huber(nn.Module):
     def __init__(self):
-        # --------------------------------------------------------------------------------
-        # Default parameters (heuristic starting points)
-        super().__init__()
 
-        # print('\n\n------- Neural Network Simple CNN Gradient Penalty (FC) Huber ----------\n\n')
+        super().__init__()
 
         self.conv1 = nn.Conv2d(1, 32, kernel_size=4, stride=2, padding=1, bias=True)
         self.prelu1 = nn.PReLU()
@@ -20,7 +17,6 @@ class discriminator_net_Huber(nn.Module):
         self.fc1 = nn.Linear(16*16, 4*4, bias=True)
         self.prelu4 = nn.PReLU()
         self.fc2 = nn.Linear(4*4, 1, bias=True)
-        # self.prelu5 = nn.PReLU()
 
     def forward(self, u):
 
