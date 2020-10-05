@@ -9,10 +9,7 @@ import os
 import pickle
 import utils
 
-# from adversarial_networks import discriminator_net as discriminator_net; architecture = 'Regular' # USING FC at the end
-# from adversarial_networks import discriminator_net_abs as discriminator_net; architecture = 'Abs' # USING FC at the end
-from adversarial_networks import discriminator_net_Huber as discriminator_net; architecture = 'Huber' # USING FC at the end
-# from adversarial_networks import discriminator_net_fullsort as discriminator_net; architecture = 'Fullsort' # USING FC at the end
+from adversarial_networks import discriminator_net_Huber as discriminator_net; architecture = 'Huber' 
 
 
 n_train         = 10000  # number of training samples (10000 max)
