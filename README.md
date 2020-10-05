@@ -3,8 +3,7 @@ Pytorch implementation of Adversarial Projections.
 
 ## Associated Publication
 
-Projecting to Manifolds via Unsupervised Learning
-https://arxiv.org/abs/2008.02200
+Projecting to Manifolds via Unsupervised Learning (**[arXiv Link](https://arxiv.org/abs/2008.02200)**)
 
 Please cite as
     
