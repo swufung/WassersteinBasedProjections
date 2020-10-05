@@ -1,5 +1,5 @@
 # Adversarial Projections
-Pytorch implementation of Adversarial Projections
+Pytorch implementation of Adversarial Projections.
 
 ## Associated Publication
 
