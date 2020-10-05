@@ -71,6 +71,7 @@ print(device)
 # load the data
 # ------------------------------------------------------------------------------------------------------------------
 data_path = './CTEllipse/experimentsEllipse/ellipses__train_size-10000_tv_lam-0.001__beams-30__noise-0.025__july-16-2020.pkl'
+os.makedirs(data_path, exists_ok=True)
 
 with open(data_path, 'rb') as f:
     data_state = pickle.load(f)
@@ -79,6 +80,7 @@ with open(data_path, 'rb') as f:
     u_gen_full_train = data_state[gen0_type]
 
 val_data_path = './CTEllipse/experimentsEllipse/ellipses__val_size-1000_tv_lam-0.001__beams-30__noise-0.025__july-16-2020.pkl'
+os.makedirs(val_data_path, exists_ok=True)
 
 with open(val_data_path, 'rb') as f:
     data_state = pickle.load(f)
@@ -195,6 +197,7 @@ save_path = './CTEllipse/experimentsEllipse/' + 'ellipseCT_'  + utils.get_time_s
             '_distMan_lam{:.0e}'.format(dist_man_lam) + '_lr_decay_iter{:d}'.format(lr_decay_iter) + \
             'doAugment{:d}'.format(do_augment) + '_architecture' + architecture +\
             '_stepType' + step_type + '_tvlam001/'
+os.makedirs(save_path, exists_ok=True)
 
 # max and min values for plotting
 vmin = min(u0_gen_full_train[0, :].view(-1))
