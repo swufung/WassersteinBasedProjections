@@ -37,6 +37,9 @@ To train the ellipse CT problem run trainEllipseCT.py
 
 To train the lodopab CT problem run trainLodopabCT.py
 
+To deploy adversarial projections within projected gradient descent method, run deployProjection_Ellipse.py and deployProjection_Lodopab.py.
+
+Note: these require the saved weights to be loaded.
 
 ## Acknowledgements
 
