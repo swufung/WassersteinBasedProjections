@@ -29,7 +29,7 @@ The Lodopab training and validation data should be stored in the following path:
 
 ## Toy Problems
 
-
+The [straggler illustration](https://colab.research.google.com/drive/1hhMmAr1MuBm9LOe29v8-cE88UdawUeRw?usp=sharing) and [toy manifold projection](https://colab.research.google.com/drive/1tO8T5E_Jycke9qV0s3uPsNqYybeDO0ue?usp=sharing) code can be run via these links online on Google Colab.
 
 ## Low Dose CT Problems
 
