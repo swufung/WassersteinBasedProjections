@@ -1,3 +1,5 @@
+import torch.nn as nn
+
 class discriminator_net_Huber(nn.Module):
     def __init__(self):
 
