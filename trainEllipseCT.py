@@ -70,8 +70,14 @@ print(device)
 # ------------------------------------------------------------------------------------------------------------------
 # load the data
 # ------------------------------------------------------------------------------------------------------------------
+<<<<<<< HEAD
+folder_path = './Datasets/'
+
+data_path = folder_path + 'ellipses__train_size-10000_tv_lam-0.001__beams-30__noise-0.025__july-16-2020-002.pkl'
+=======
 data_path = './CTEllipse/experimentsEllipse/ellipses__train_size-10000_tv_lam-0.001__beams-30__noise-0.025__july-16-2020.pkl'
 os.makedirs(data_path, exist_ok=True)
+>>>>>>> 4397c9efd6c5f0ce4f61f6804b2a4d5668b5841b
 
 with open(data_path, 'rb') as f:
     data_state = pickle.load(f)
@@ -79,8 +85,12 @@ with open(data_path, 'rb') as f:
     u_true_full_train = data_state['x_true']
     u_gen_full_train = data_state[gen0_type]
 
+<<<<<<< HEAD
+val_data_path = folder_path + 'ellipses__val_size-1000_tv_lam-0.001__beams-30__noise-0.025__july-16-2020.pkl'
+=======
 val_data_path = './CTEllipse/experimentsEllipse/ellipses__val_size-1000_tv_lam-0.001__beams-30__noise-0.025__july-16-2020.pkl'
 os.makedirs(val_data_path, exist_ok=True)
+>>>>>>> 4397c9efd6c5f0ce4f61f6804b2a4d5668b5841b
 
 with open(val_data_path, 'rb') as f:
     data_state = pickle.load(f)
