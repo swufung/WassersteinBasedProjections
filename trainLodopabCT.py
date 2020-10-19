@@ -68,8 +68,9 @@ print(device)
 # load the data
 # ------------------------------------------------------------------------------------------------------------------
 # Lodopab
-data_path = './CTLodopab/experimentsLodopab/lodopab___train_size-20000___tv_lam-0.0005__july-25-2020.pkl'
-os.makedirs(data_path,  exist_ok=True)
+folder_path = './Datasets/'
+
+data_path = folder_path + 'lodopab___train_size-20000___tv_lam-0.0005__july-25-2020-003.pkl'
 
 with open(data_path, 'rb') as f:
     data_state = pickle.load(f)
@@ -77,8 +78,7 @@ with open(data_path, 'rb') as f:
     u_true_full_train = data_state['x_true']
     u_gen_full_train = data_state[gen0_type]
 
-val_data_path = './CTLodopab/experimentsLodopab/lodopab___validation_size-2000___tv_lam-0.0005__july-25-2020.pkl'
-os.makedirs(val_data_path,  exist_ok=True)
+val_data_path = folder_path + 'lodopab___validation_size-2000___tv_lam-0.0005__july-25-2020.pkl'
 
 with open(val_data_path, 'rb') as f:
     data_state = pickle.load(f)
