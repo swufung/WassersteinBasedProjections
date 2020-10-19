@@ -22,9 +22,9 @@ pip install -r requirements.txt
 
 To run CT problems, first download the datasets from [here](https://drive.google.com/drive/folders/19ZDAutGypx4kkqMolLpSUUnN8C8JWcYd?usp=sharing).
 
-The ellipse training and validation data should be stored in the following path: ./CTEllipse/experimentsEllipse/
+The ellipse training and validation data should be stored in the following path: ./Datasets/
 
-The Lodopab training and validation data should be stored in the following path: ./CTLodopab/experimentsLodopab/ 
+The Lodopab training and validation data should be stored in the following path: ./Datasets/ 
 
 
 ## Toy Problems
