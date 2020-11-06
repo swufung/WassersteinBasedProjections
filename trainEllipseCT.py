@@ -94,13 +94,6 @@ u_gen_full_train = np.transpose(u_gen_full_train, [0, 3, 1, 2])
 u_true_full_val = np.transpose(u_true_full_val, [0, 3, 1, 2])
 u_gen_full_val = np.transpose(u_gen_full_val, [0, 3, 1, 2])
 
-# # Renormalize everything to the unit interval [0,1]
-# for idx in range(u_gen_full_train.shape[0]):
-#     u_gen_full_train[idx] = utils.scale_to_interval(u_gen_full_train[idx], image_scaling)
-#
-# for idx in range(u_gen_full_val.shape[0]):
-#     u_gen_full_val[idx] = utils.scale_to_interval(u_gen_full_val[idx], image_scaling)
-
 # ------------------------------------------------------------------------------------------------------------------
 # Create Dataset
 # ------------------------------------------------------------------------------------------------------------------
@@ -206,9 +199,6 @@ vmax = max(u0_gen_full_train[0, :].view(-1))
 vmin_val = min(u_true_full_val[ind_val, :].view(-1))
 vmax_val = max(u_true_full_val[ind_val, :].view(-1))
 
-# vmin_val = min(u_true_full_val.reshape(n_val, -1)[ind_val, :])
-# vmax_val = max(u_true_full_val.reshape(n_val, -1)[ind_val, :])
-
 print('os.path.exists(os.path.dirname(save_path)) = ', os.path.exists(os.path.dirname(save_path)))
 print('os.path.dirname(save_path) = ', os.path.dirname(save_path))
 
@@ -311,10 +301,6 @@ for epoch in range(1, max_epochs + 1):  # loop over the dataset multiple times
                 u_gen = torch.cat((u_gen, u_gen.flip(2), u_gen.flip(3)),0)
                 u_real = torch.cat((u_real, u_real.flip(2), u_real.flip(3)), 0)
                 n_train_augmented = 3*n_train # augmented n_train
-            # u_gen = torch.cat((u_gen, u_gen.flip(2), u_gen.flip(3), u_gen.transpose(2, 3).flip(2),
-            #                    u_gen.flip([3, 2]), u_gen.transpose(2, 3).flip(3)), 0)
-            # print("u_gen[0,0] = %.8e" % u_gen[0, 0])
-            # print('u_gen_augmented.shape = ', u_gen.shape)
 
             # zero the parameter gradients
             optimizer.zero_grad()
@@ -337,9 +323,6 @@ for epoch in range(1, max_epochs + 1):  # loop over the dataset multiple times
 
             # gradient penalty
             if do_grad_pen:
-                # assert (batch_size == u_real.size()[0]), f"def_batch: {batch_size} | u_real.size()[0]: {u_real.size()[0]}"
-                # min_batch_size = np.min([u_real.shape[0], u_gen.shape[0]]) # pick smaller batch size
-                # grad_pen = utils.grad_penalty(u_real[0:min_batch_size,:,:,:], u_gen[0:min_batch_size,:,:,:], netD, device)
 
                 # do gradient penalty without augmentation
                 grad_pen = utils.grad_penalty(u_real[0:batch_size, :, :, :], u_gen[0:batch_size, :, :, :], netD, device)
@@ -622,8 +605,7 @@ for epoch in range(1, max_epochs + 1):  # loop over the dataset multiple times
                     0].detach()
                 # sum up all norms. Note here that nablaJ is n_samples x dim
                 # so we want to take the norms along dimension 1
-
-                # print("nablaJ.reshape(nablaJ.size(0), -1).shape = ", nablaJ.reshape(nablaJ.size(0), -1).shape)
+                
                 eta += (torch.norm(nablaJ.reshape(nablaJ.size(0), -1), p=2, dim=1) ** 2).sum()
 
                 del nablaJ, Jout, u_gen
