@@ -63,52 +63,10 @@ for k in range(outer_k_max):
 
 
 # Try a bunch of gradient descent parameters
-experiment.log_optimization_2(None, 100, 1e-2, 3)
-experiment.log_optimization_2(None, 50, 1e-2, 3)
-experiment.log_optimization_2(None, 25, 1e-2, 3)
-experiment.log_optimization_2(None, 10, 1e-2, 3)
-
-experiment.log_optimization_2(None, 100, 5e-2, 3)
-experiment.log_optimization_2(None, 50, 5e-2, 3)
-experiment.log_optimization_2(None, 25, 5e-2, 3)
-experiment.log_optimization_2(None, 10, 5e-2, 3)
-
-experiment.log_optimization_2(None, 100, 1e-2, 2)
-experiment.log_optimization_2(None, 50, 1e-2, 2)
-experiment.log_optimization_2(None, 25, 1e-2, 2)
-experiment.log_optimization_2(None, 10, 1e-2, 2)
-
-experiment.log_optimization_2(None, 100, 5e-2, 2)
-experiment.log_optimization_2(None, 50, 5e-2, 2)
-experiment.log_optimization_2(None, 25, 5e-2, 2)
-experiment.log_optimization_2(None, 10, 5e-2, 2)
-
-experiment.log_optimization_2(None, 100, 1e-2, 1)
-experiment.log_optimization_2(None, 50, 1e-2, 1)
-experiment.log_optimization_2(None, 25, 1e-2, 1)
-experiment.log_optimization_2(None, 10, 1e-2, 1)
-
-experiment.log_optimization_2(None, 100, 5e-2, 1)
-experiment.log_optimization_2(None, 50, 5e-2, 1)
-experiment.log_optimization_2(None, 25, 5e-2, 1)
-experiment.log_optimization_2(None, 10, 5e-2, 1)
-
-experiment.log_optimization_2(None, 100, 1e-2, 0.5)
-experiment.log_optimization_2(None, 50, 1e-2, 0.5)
-experiment.log_optimization_2(None, 25, 1e-2, 0.5)
-experiment.log_optimization_2(None, 10, 1e-2, 0.5)
-
-experiment.log_optimization_2(None, 100, 5e-2, 0.5)
-experiment.log_optimization_2(None, 50, 5e-2, 0.5)
-experiment.log_optimization_2(None, 25, 5e-2, 0.5)
-experiment.log_optimization_2(None, 10, 5e-2, 0.5)
-
-experiment.log_optimization_2(None, 100, 1e-2, 0.25)
-experiment.log_optimization_2(None, 50, 1e-2, 0.25)
-experiment.log_optimization_2(None, 25, 1e-2, 0.25)
-experiment.log_optimization_2(None, 10, 1e-2, 0.25)
-
-experiment.log_optimization_2(None, 100, 5e-2, 0.25)
-experiment.log_optimization_2(None, 50, 5e-2, 0.25)
-experiment.log_optimization_2(None, 25, 5e-2, 0.25)
-experiment.log_optimization_2(None, 10, 5e-2, 0.25)
+for total_steps in [100, 50, 25, 10]:
+    for step_s in [1e-2]:
+        for mu in [3, 2, 1, 0.5]:
+            print(f'total_steps: {total_steps}, step_size: {step_s}, mu: {mu}')
+            qualities = experiment.log_optimization_2(None, total_steps, step_s, mu)
+            print(f'l2: {qualities[0]}, psnr: {qualities[1]}, ssim: {qualities[2]}')
+            print()
