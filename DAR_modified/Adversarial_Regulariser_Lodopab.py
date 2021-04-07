@@ -7,16 +7,16 @@ from ClassFiles.data_pips import lodopab
 DATA_PATH = './Datasets/Lodopab/'
 SAVES_PATH = './Savefolder/DeepAdversarialRegulariser/'
 
-step_s = 0.01
-batch_s = 32
-def_mu = 3
 def_lr = 0.0001
+batch_s = 32
+
+def_mu = 3
+step_s = 0.01
 mini_start = 'Mini'  # None
+def_lmb = 20
 
 outer_k_max = 20
 inner_k_max = 200
-
-def_lmb = 20
 
 class Experiment1(AdversarialRegulariser):
     experiment_name = 'Lodopab__0p025_individualnoise-0p015__tv_lam_0p0005_start__April-06-2021' \
@@ -27,14 +27,13 @@ class Experiment1(AdversarialRegulariser):
 
     # relation between L2 error and regulariser
     # 0 corresponds to pure L2 loss, infty to pure adversarial loss
-    mu_default = def_mu
-
     learning_rate = def_lr
+    batch_size = batch_s
+
+    mu_default = def_mu
     step_size = step_s
     total_steps_default = 10
     starting_point = mini_start
-    batch_size = batch_s
-
     lmb = def_lmb
 
     def get_network(self, size, colors):
