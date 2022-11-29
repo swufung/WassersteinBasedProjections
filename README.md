@@ -7,11 +7,16 @@ _Projecting to Manifolds via Unsupervised Learning_ (**[arXiv Link](https://arxi
 
 Please cite as
     
-    @article{heaton2020projecting,
-        title={Projecting to Manifolds via Unsupervised Learning},
-        author={Heaton, Howard and Fung, Samy Wu and Lin, Alex Tong and Osher, Stanley and Yin, Wotao},
-        journal={arXiv preprint arXiv:2008.02200},
-        year={2020}}
+    @article{heaton2022wasserstein,
+      title={Wasserstein-Based Projections with Applications to Inverse Problems},
+      author={Heaton, Howard and Fung, Samy Wu and Lin, Alex Tong and Osher, Stanley and Yin, Wotao},
+      journal={SIAM Journal on Mathematics of Data Science},
+      volume={4},
+      number={2},
+      pages={581--603},
+      year={2022},
+      publisher={SIAM}
+    }
 
 ## Set-up
 
