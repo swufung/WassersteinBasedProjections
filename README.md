@@ -1,9 +1,9 @@
-# Adversarial Projections
+# Wasserstein-based Projections
 Pytorch implementation of Adversarial Projections.
 
 ## Associated Publication
 
-_Projecting to Manifolds via Unsupervised Learning_ (**[arXiv Link](https://arxiv.org/abs/2008.02200)**)
+_Wasserstein-Based Projections with Applications to Inverse Problems_ (**[arXiv Link](https://arxiv.org/abs/2008.02200)**)
 
 Please cite as
     
